@@ -1,0 +1,73 @@
+# Site settings — edit _data/profile.yml for personal info
+title: "Your Name"
+description: "Personal academic homepage and knowledge base"
+url: "https://leriuir1293.github.io"
+baseurl: ""
+lang: zh-CN
+
+# Build
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  math_engine: mathjax
+permalink: pretty
+timezone: Asia/Shanghai
+excerpt_separator: "<!--more-->"
+
+# Collections — add new .md files to these folders
+collections:
+  notes:
+    output: true
+    permalink: /notes/:name/
+  blog:
+    output: true
+    permalink: /blog/:name/
+  projects:
+    output: true
+    permalink: /projects/:name/
+  publications:
+    output: true
+    permalink: /publications/:name/
+
+# Default layouts per content type
+defaults:
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: note
+  - scope:
+      path: ""
+      type: blog
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: publication
+
+# Notes categories (used for filter UI; add new ones here as needed)
+note_categories:
+  - machine-learning
+  - deep-learning
+  - math
+  - programming
+  - research-tools
+  - other
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .git
+  - .gitignore
+  - templates

@@ -1,0 +1,35 @@
+# Personal information — edit this file to update site-wide profile data
+
+name: "Your Name"
+title: "PhD Student / Researcher"          # e.g. "PhD Student in Computer Science"
+affiliation: "Your University / Lab"       # e.g. "XX University, YY Lab"
+email: "your.email@example.com"
+location: "City, Country"
+
+# Short tagline shown on homepage
+tagline: "Research interests in machine learning, NLP, and ..."
+avatar: ""                                 # optional: /assets/images/avatar.jpg
+
+# Research interests (shown on About and homepage)
+research_interests:
+  - "Topic area 1 (e.g. large language models)"
+  - "Topic area 2 (e.g. reasoning and planning)"
+  - "Topic area 3 (e.g. efficient training methods)"
+
+# Current research focus (1–2 sentences)
+current_focus: >
+  Briefly describe what you are working on right now.
+  Replace this placeholder with your actual research direction.
+
+# External links — leave url empty or remove entry to hide
+links:
+  github: "https://github.com/Leriuir1293"
+  google_scholar: ""                       # e.g. https://scholar.google.com/citations?user=XXXX
+  semantic_scholar: ""
+  orcid: ""
+  twitter: ""
+  linkedin: ""
+  dblp: ""
+
+# CV file (optional) — place PDF at assets/files/cv.pdf
+cv_pdf: ""                                 # e.g. /assets/files/cv.pdf

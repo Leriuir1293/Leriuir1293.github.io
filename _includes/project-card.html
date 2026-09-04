@@ -1,0 +1,18 @@
+<article class="project-card">
+  <h3 class="project-card-title">
+    <a href="{{ include.project.url | relative_url }}">{{ include.project.title }}</a>
+  </h3>
+  {% if include.project.status %}
+  <span class="badge badge--{{ include.project.status }}">{{ include.project.status }}</span>
+  {% endif %}
+  {% if include.project.summary %}
+  <p class="project-card-summary">{{ include.project.summary }}</p>
+  {% endif %}
+  {% if include.project.tags %}
+  <div class="tag-list">
+    {% for tag in include.project.tags %}
+    <span class="tag tag-muted">{{ tag }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+</article>

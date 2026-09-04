@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<div class="list-page">
+  <header class="list-header">
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="list-description">{{ page.description }}</p>{% endif %}
+  </header>
+
+  <div class="list-toolbar">
+    <div class="search-box">
+      <label for="blog-search" class="visually-hidden">Search blog posts</label>
+      <input type="search" id="blog-search" placeholder="Search title, summary…" autocomplete="off">
+    </div>
+  </div>
+
+  <p class="list-count" id="blog-count" aria-live="polite"></p>
+
+  <ul class="content-list blog-list" id="blog-list">
+    {% assign sorted_posts = site.blog | sort: 'date' | reverse %}
+    {% for post in sorted_posts %}
+    <li class="content-item blog-item"
+        data-title="{{ post.title | downcase }}"
+        data-summary="{{ post.summary | default: post.excerpt | strip_html | downcase }}"
+        data-category="{{ post.categories | join: ' ' | downcase }}">
+      <a href="{{ post.url | relative_url }}" class="content-item-link">
+        <div class="content-item-main">
+          <h2 class="content-item-title">{{ post.title }}</h2>
+          {% if post.summary %}
+          <p class="content-item-summary">{{ post.summary }}</p>
+          {% endif %}
+        </div>
+        <div class="content-item-meta">
+          {% if post.categories.size > 0 %}
+          <span class="category-label">{{ post.categories | first }}</span>
+          {% endif %}
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <p class="empty-state" id="blog-empty" hidden>No posts match your search.</p>
+</div>

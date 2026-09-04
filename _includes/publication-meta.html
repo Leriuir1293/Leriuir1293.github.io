@@ -1,0 +1,17 @@
+<div class="pub-meta">
+  <p class="pub-authors">{{ page.authors | default: "Author names (edit front matter)" }}</p>
+  <p class="pub-venue">
+    {% if page.venue %}{{ page.venue }}{% else %}Venue (conference / journal){% endif %}
+    {% if page.year %} · {{ page.year }}{% endif %}
+  </p>
+  {% if page.type %}
+  <span class="badge">{{ page.type }}</span>
+  {% endif %}
+</div>
+{% if page.links %}
+<div class="pub-links">
+  {% for link in page.links %}
+  <a href="{{ link.url }}" class="btn btn-sm btn-outline" target="_blank" rel="noopener">{{ link.label }}</a>
+  {% endfor %}
+</div>
+{% endif %}

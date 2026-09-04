@@ -1,0 +1,22 @@
+# Main navigation — reorder or add items here
+
+- title: About
+  url: /about/
+
+- title: Research
+  url: /research/
+
+- title: Publications
+  url: /publications/
+
+- title: Notes
+  url: /notes/
+
+- title: Blog
+  url: /blog/
+
+- title: CV
+  url: /cv/
+
+- title: Contact
+  url: /contact/

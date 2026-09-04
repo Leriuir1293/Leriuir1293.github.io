@@ -1,0 +1,25 @@
+<li class="publication-entry">
+  <div class="pub-main">
+    <h3 class="pub-title">
+      {% if include.pub.url %}
+      <a href="{{ include.pub.url | relative_url }}">{{ include.pub.title }}</a>
+      {% else %}
+      {{ include.pub.title }}
+      {% endif %}
+    </h3>
+    <p class="pub-authors">{{ include.pub.authors }}</p>
+    <p class="pub-venue">
+      <em>{{ include.pub.venue }}</em>{% if include.pub.year %}, {{ include.pub.year }}{% endif %}
+    </p>
+    {% if include.pub.award %}
+    <p class="pub-award">🏆 {{ include.pub.award }}</p>
+    {% endif %}
+  </div>
+  {% if include.pub.links %}
+  <div class="pub-links">
+    {% for link in include.pub.links %}
+    <a href="{{ link.url }}" class="link-muted" target="_blank" rel="noopener">[{{ link.label }}]</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+</li>

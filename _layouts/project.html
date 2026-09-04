@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<article class="project">
+  <header class="project-header">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="{{ '/research/' | relative_url }}">Research</a>
+      <span aria-hidden="true"> / </span>
+      <span>{{ page.title }}</span>
+    </nav>
+    <h1 class="project-title">{{ page.title }}</h1>
+    <div class="project-meta">
+      {% if page.status %}
+      <span class="badge badge--{{ page.status }}">{{ page.status }}</span>
+      {% endif %}
+      {% if page.period %}
+      <span class="meta-sep">·</span>
+      <span>{{ page.period }}</span>
+      {% endif %}
+    </div>
+    {% if page.summary %}
+    <p class="project-summary">{{ page.summary }}</p>
+    {% endif %}
+    {% if page.links %}
+    <div class="project-links">
+      {% for link in page.links %}
+      <a href="{{ link.url }}" class="btn btn-outline" {% if link.url contains 'http' %}target="_blank" rel="noopener"{% endif %}>{{ link.label }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </header>
+  <div class="project-content prose">
+    {{ content }}
+  </div>
+</article>

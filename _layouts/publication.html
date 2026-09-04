@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<article class="publication-detail">
+  <header class="publication-header">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="{{ '/publications/' | relative_url }}">Publications</a>
+      <span aria-hidden="true"> / </span>
+      <span>{{ page.title }}</span>
+    </nav>
+    <h1 class="publication-title">{{ page.title }}</h1>
+    {% include publication-meta.html %}
+  </header>
+  <div class="publication-content prose">
+    {{ content }}
+  </div>
+</article>

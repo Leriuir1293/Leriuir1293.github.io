@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+      {% if page.categories.size > 0 %}
+      <span class="meta-sep">·</span>
+      {% for cat in page.categories %}
+      <a class="tag" href="{{ '/blog/' | relative_url }}?category={{ cat | uri_escape }}">{{ cat }}</a>
+      {% endfor %}
+      {% endif %}
+      {% if page.reading_time %}
+      <span class="meta-sep">·</span>
+      <span>{{ page.reading_time }} min read</span>
+      {% endif %}
+    </div>
+    {% if page.summary %}
+    <p class="post-summary">{{ page.summary }}</p>
+    {% endif %}
+  </header>
+  <div class="post-content prose">
+    {{ content }}
+  </div>
+  {% if page.tags.size > 0 %}
+  <footer class="post-footer">
+    {% for tag in page.tags %}
+    <span class="tag tag-muted">#{{ tag }}</span>
+    {% endfor %}
+  </footer>
+  {% endif %}
+</article>

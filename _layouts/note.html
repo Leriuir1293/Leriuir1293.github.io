@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<article class="note">
+  <header class="note-header">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="{{ '/notes/' | relative_url }}">Notes</a>
+      <span aria-hidden="true"> / </span>
+      <span>{{ page.category | default: page.categories | first | default: 'other' }}</span>
+    </nav>
+    <h1 class="note-title">{{ page.title }}</h1>
+    <div class="note-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+      {% if page.updated %}
+      <span class="meta-sep">·</span>
+      <span>updated {{ page.updated | date: "%Y-%m-%d" }}</span>
+      {% endif %}
+      {% if page.status %}
+      <span class="meta-sep">·</span>
+      <span class="note-status note-status--{{ page.status }}">{{ page.status }}</span>
+      {% endif %}
+    </div>
+    {% if page.summary %}
+    <p class="note-summary">{{ page.summary }}</p>
+    {% endif %}
+  </header>
+  <div class="note-content prose">
+    {{ content }}
+  </div>
+  {% if page.tags.size > 0 %}
+  <footer class="note-footer">
+    {% for tag in page.tags %}
+    <a class="tag" href="{{ '/notes/' | relative_url }}?tag={{ tag | uri_escape }}">#{{ tag }}</a>
+    {% endfor %}
+  </footer>
+  {% endif %}
+</article>
