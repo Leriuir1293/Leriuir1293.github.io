@@ -1,11 +1,11 @@
 ---
-
-## title: "GitHub 协作使用备忘"
+title: "GitHub 协作使用备忘"
 date: 2026-09-05
 category: other
 tags: [github, git, collaboration]
-summary: "本地与远程、冲突原因、拉取他人修改、解决冲突、以及如何用己方版本更新 main 的操作备忘。"
-status: draft
+summary:  "本地与远程、冲突原因、拉取他人修改、解决冲突、以及如何用己方版本更新 main 的操作备忘。"
+status: stable
+---
 
 ## 本地提交 vs 远程提交
 
